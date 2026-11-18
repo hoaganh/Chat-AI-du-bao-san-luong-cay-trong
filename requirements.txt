@@ -1,0 +1,12 @@
+# Cận dưới (chưa thử từng bản cũ); bộ phiên bản đã chạy đủ test nằm trong requirements-tested.txt
+streamlit>=1.40
+pandas>=2.0
+scikit-learn>=1.3
+scipy>=1.10
+sqlalchemy>=2.0
+altair>=5.0
+matplotlib>=3.7
+fastapi>=0.110
+uvicorn>=0.27
+httpx>=0.27
+joblib>=1.3

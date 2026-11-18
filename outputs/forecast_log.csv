@@ -1,0 +1,4 @@
+nam,nang_suat_thuc_te_ta_ha,nang_suat_du_bao_mo_hinh_ta_ha,sai_so_mo_hinh_ta_ha,sai_so_tuyet_doi_ta_ha,nang_suat_nam_truoc_ta_ha,baseline_last_value_ta_ha,baseline_trung_binh_3_nam_ta_ha,thay_doi_du_bao_so_voi_nam_truoc_percent,risk_level,recommendation,reason
+2022,65.25,67.23305350649684,1.9830535064968444,1.9830535064968444,66.29,66.29,63.96,1.423,NORMAL,THEO_DOI_BINH_THUONG,"Dự báo 67.23 tạ/ha, thay đổi +1.42% so với năm trước (66.29)."
+2023,66.01,67.37775995174115,1.3677599517411494,1.3677599517411494,65.25,65.25,64.84333333333333,3.261,NORMAL,THEO_DOI_BINH_THUONG,"Dự báo 67.38 tạ/ha, thay đổi +3.26% so với năm trước (65.25)."
+2024,65.77,68.53517432477952,2.7651743247795224,2.7651743247795224,66.01,66.01,65.85000000000001,3.825,NORMAL,THEO_DOI_BINH_THUONG,"Dự báo 68.54 tạ/ha, thay đổi +3.83% so với năm trước (66.01)."

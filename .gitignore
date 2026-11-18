@@ -1,0 +1,28 @@
+# --- Bí mật và dữ liệu cục bộ (KHÔNG BAO GIỜ commit) ---
+api_key.txt
+*.key
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+agfarm.db
+*.db
+*.sqlite3
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# --- Sinh ra khi chạy ---
+outputs/chat_log.jsonl
+outputs/api_test_result.json
+data/lua_an_giang_ghep.csv
+data/*.bak
+
+# --- Hệ điều hành / trình soạn thảo ---
+.DS_Store
+Thumbs.db
+*.swp

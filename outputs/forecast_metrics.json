@@ -1,0 +1,79 @@
+{
+  "model_version": "lua_forecast_v1",
+  "target": "nang_suat_ta_ha",
+  "unit": "tạ/ha",
+  "feature_columns": [
+    "nam",
+    "dien_tich_ha",
+    "mua_tong_mm",
+    "nhiet_tb_c",
+    "ngay_nong"
+  ],
+  "forecast_horizon_years": 1,
+  "split": {
+    "train_target_years": [
+      2016,
+      2019
+    ],
+    "validation_target_years": [
+      2020,
+      2021
+    ],
+    "test_target_years": [
+      2022,
+      2024
+    ],
+    "train_rows": 4,
+    "validation_rows": 2,
+    "test_rows": 3,
+    "policy": "Chia theo thời gian, không random; chọn mô hình/tham số chỉ bằng validation."
+  },
+  "selected_model_by_validation_mae": "LinearRegression[default]",
+  "selected_model_test_metrics": {
+    "mae": 2.038662594339172,
+    "rmse": 2.117345629291249,
+    "mape_percent": 3.105173842552862,
+    "r2": -43.554298393229296,
+    "bias_pred_minus_actual": 2.038662594339172
+  },
+  "last_value_baseline_test_mae": 0.6800000000000068,
+  "selected_model_beats_last_value_on_test": false,
+  "risk_thresholds": {
+    "sigma_yoy_percent": 4.025,
+    "warning_drop_percent": 2.012,
+    "high_drop_percent": 4.025,
+    "critical_drop_percent": 6.037,
+    "rule": "risk theo mức GIẢM dự báo so với năng suất năm liền trước (đơn vị %)."
+  },
+  "data_policy": "Bộ dữ liệu chỉ gồm 2015-2024; không có số liệu 2025-2026.",
+  "walk_forward": {
+    "target_years": [
+      2019,
+      2024
+    ],
+    "n_years": 6,
+    "rule": "mỗi năm đích chỉ train trên các năm đích trước đó (tối thiểu 3 dòng); cấu hình mô hình khai báo trước",
+    "mae_by_model": {
+      "LastValue_baseline": 1.025,
+      "LinearRegression": 1.255,
+      "MovingAverage3_baseline": 1.421,
+      "RandomForest(60,3,2)": 2.108
+    },
+    "best_model": "LastValue_baseline",
+    "best_beats_last_value": false
+  },
+  "ablation": {
+    "best_feature_set": "LastValue_baseline (khong dung dac trung)",
+    "mae_full_features": 1.255,
+    "mae_without_weather": 1.683,
+    "weather_helps": true
+  },
+  "caveat": "Chỉ 4 dòng train, 2 validation, 3 test; chỉ số dao động mạnh, không bảo đảm cho tương lai.",
+  "prediction_interval": {
+    "half_width": 1.9830535064968444,
+    "n_residuals": 6,
+    "reference_mae": 1.2554676629701014,
+    "method": "khoảng sai số tham khảo: ± độ lệch tuyệt đối lớn nhất của dự báo cuốn chiếu 2019–2024",
+    "note": "Chỉ 6 phần dư, gồm cả các năm test 2022–2024 và tính từ cấu hình đại diện của họ mô hình (không nhất thiết đúng cấu hình được chọn). Không có hiệu chỉnh độc lập nên KHÔNG diễn giải thành xác suất bao phủ; không gồm rủi ro đổi chiều xu hướng."
+  }
+}
